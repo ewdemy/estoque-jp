@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Poppins, arial, helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header{
+    width: 100%;
+    background-color: rgb(21, 14, 98);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+header a{
+    width: 250px;
+    margin-right: -250px;
+    transition: margin-right 0.5s;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.titulo img{
+    width: 30px;
+    margin-right: 10px;
+}
+.titulo h1{
+    font-size: 22px;
+    color: rgb(231, 174, 17);
+    
+}
+
+.btn-abrir{
+    color: #fff;
+    font-size: 25px;
+}
+
+nav{
+    height: 100%;
+    width: 0px;
+    background-color: rgb(21, 14, 98);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+
+nav a{
+    color: #fff;
+    font-size: 25px;
+    display: block;
+    padding: 12px 10px 12px 32px;
+}
+
+#menu a.ativo{
+    color: rgb(231, 174, 17);
+}
+
+nav a:hover{
+    background-color: #fff;
+    color: rgb(21, 14, 98);
+}
+
+
+main{
+    transition: margin-left 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(23, 22, 24, 0.400), rgba(23, 22, 24, 0.400)100%), url("../img/capa.jpg");
+    background-size: cover;
+}
+
+.conteudo{
+    display: none;
+    flex-direction: column;
+    padding: 15px;
+    min-width: 500px;
+    background: #fff;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.conteudo h1{
+    font-size:22px;
+    font-weight:700;
+    text-align: center;
+    color: rgb(21, 14, 98);
+}
+
+input[type="text"]{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+    background: #e3e5ec;
+}
+
+.input-group{
+    margin-top: 10px;
+    
+}
+
+button{
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(11, 156, 72);
+    color: #fff;
+    margin-right: 10px;
+}
+
+#btn-pesquisar-estoque{
+    background-color: rgb(21, 14, 98);
+}
+
+#btn-atualizar-estoque{
+    display: none;
+}
+
+table{
+    margin-top: 20px;
+    width: 100%;
+    border-spacing: 0 10px;
+    
+}
+
+table th{
+    background: #d0d2da;
+    font-weight: 600;
+    padding: 5px 15px;
+    text-align: left;
+    font-size:15px;
+
+}
+table td{
+    background: #e3e5ec;
+    padding: 5px 15px;
+    font-weight: normal;
+    cursor: pointer;
+    font-size:15px;
+}
+
+
+table tbody tr{
+    opacity: 0.7;
+}
+table tbody tr:hover{
+    opacity: 1;
+}
+
+table thead tr th:nth-child(2),
+table tbody tr td:nth-child(2){
+    border-radius: 5px 0 0 5px;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+.icon-atualizar{
+    width: 20px;
+    opacity: 0.7;
+}
+.icon-excluir{
+    width: 20px;
+    opacity: 0.7;
+}
+
+.icon-atualizar:hover{
+    opacity: 1;
+}
+.icon-excluir:hover{
+    opacity: 1;
+}
+
+.cel-qtd{
+    text-align: center;
+}
+
+/* Configurar entradas */
+
+.input{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+    background: #e3e5ec;
+}
+
+#pesquisar-produto{
+    margin-right: 5px;
+}
+
+.barra-pesquisa{
+    display: flex;
+    flex-direction: column;
+}
+
+.barra-pesquisa div{
+    display: flex;
+}
+.lupa{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(21, 14, 98);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
+footer{
+    background-color: rgb(21, 14, 98);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    flex-shrink: 0;
+    transition: margin-left 0.5s;
+}
+.rodape{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.redes-sociais a{
+    margin: 0 5px;
+}
+
+footer .rodape .redes-sociais a img{
+    width: 20px;
+}

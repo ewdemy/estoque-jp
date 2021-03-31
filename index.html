@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGE</title>
+    <link rel="shortcut icon" href="./img/logo_transparent.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <a href="#" class="btn-abrir" id="btn-abrir" onclick="abrirMenu()">&#9776; Menu</a>
+        <div class="titulo">
+            <img src="./img/logo_transparent.png" alt="Logo SGE">
+            <h1>SGE - Sistema Gerenciador de Estoque</h1>
+        </div>
+        
+    </header>
+    <nav id="menu">
+        <a href="#" onclick="fecharMenu()">&times; Fechar</a>
+        <a href="#" class="item-menu" onclick="abrirConteudo(event,'estoque')" id="item-estoque">Estoque</a>
+        <a href="#" class="item-menu" onclick="abrirConteudo(event,'entrada')">Entrada</a>
+        <a href="#" class="item-menu" onclick="abrirConteudo(event,'saida')">Saída</a>
+    </nav>
+    <main id="container">
+
+
+        <section id="estoque" class="conteudo">
+            <h1>Estoque</h1>
+
+            <form action="#" method="POST">
+                <div>
+                    <input type="hidden" id="produto-id" name="produto-id">
+                </div>
+
+                <div class="input-group">
+                    <label for="produto">Produto:</label>
+                    <input type="text" name="produto" id="produto" placeholder="Digite o nome do produto" required>
+                </div>
+                <div>
+                    <input type="hidden" name="qtd-produto" id="qtd-produto" required>
+                </div>
+                <div class="input-group">
+                    <button id="btn-salvar-estoque" type="submit" onclick="adicionarEstoque(event)">Salvar</button>
+                    <button id="btn-atualizar-estoque">Atualizar</button>
+                    <button id="btn-pesquisar-estoque" onclick="pesquisarProduto(event)" >Pesquisar</button>
+                </div>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th hidden>Código</th>
+                        <th>Produto</th>
+                        <th class="cel-qtd">Quantidade</th>
+                        <th></th>
+                        <th ></th>
+                    </tr>
+                </thead>
+                <tbody id="lista-estoque" onclick="deleteAtualiza(event)">
+                    
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <section id="entrada" class="conteudo">
+            <h1>Entrada</h1>
+
+            <form action="#">
+                <div class="input-group barra-pesquisa">
+                    <label for="pesquisar-produto">Produto:</label>
+                    <div>
+                        <input autocomplete="off" name="pesquisar-produto" id="pesquisar-produto" placeholder="Selecione o Id do produto ou pesquise por nome" class="input" list="produtos" required>
+                        <img src="./img/lupa.png" alt="Imagem lupa" class="lupa">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="quantidade-entrada">Quantidade:</label>
+                    <input type="number" name="quantidade-entrada" id="quantidade-entrada" placeholder="Digite a quantidade" class="input">
+                </div>
+                <div class="input-group">
+                    <button id="btn-salvar-entrada" type="submit" onclick="addEntrada(event)">Adicionar</button>
+                </div>
+
+                <datalist id="produtos">
+                </datalist>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th hidden>Código</th>
+                        <th>Produto</th>
+                        <th class="cel-qtd">Quantidade</th>
+                        <th class="cel-qtd">Data</th>
+                        <th ></th>
+                    </tr>
+                </thead>
+                <tbody id="lista-entradas" onclick="deleteEntrada(event)">
+                    
+                </tbody>
+            </table>
+
+
+        </section>
+
+        <section id="saida" class="conteudo">
+            <h1>Saida</h1>
+
+            <form action="#">
+                <div class="input-group barra-pesquisa">
+                    <label for="pesquisar-produto-saida">Produto:</label>
+                    <div>
+                        <input autocomplete="off" name="pesquisar-produto" id="pesquisar-produto-saida" placeholder="Selecione o Id do produto ou pesquise por nome" class="input" list="produtos" required>
+                        <img src="./img/lupa.png" alt="Imagem lupa" class="lupa">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="quantidade-saida">Quantidade:</label>
+                    <input type="number" name="quantidade-saida" id="quantidade-saida" placeholder="Digite a quantidade" class="input" required min="0" max="999999">
+                </div>
+                <div class="input-group">
+                    <button id="btn-salvar-saida" type="submit" onclick="addSaida(event)">Adicionar</button>
+                </div>
+                <!-- <datalist id="produtos">
+                </datalist> -->
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th hidden>Código</th>
+                        <th>Produto</th>
+                        <th class="cel-qtd">Quantidade</th>
+                        <th class="cel-qtd">Data</th>
+                        <th ></th>
+                    </tr>
+                </thead>
+                <tbody id="lista-saidas" onclick="deleteSaida(event)">
+                    
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer id="foot">
+        <div class="rodape">
+            <p>&copy; 2021 Eudemir | Larissa | Douglas | Trabalho Final Web</p> 
+            <div class="redes-sociais">
+                <a href="https://www.linkedin.com/in/eudemirvieira/" target="_blank" tabindex="1"><img src="./img/linkedin.png" alt="Logo Linkedin"></a>
+                <a href="https://github.com/ewdemy" target="_blank" tabindex="6"><img src="./img/icons8-github-256.png" alt="Logo GitHub"></a>
+                <a href="https://www.instagram.com/ewdemy/" target="_blank" tabindex="3"><img src="./img/instagram.png" alt="Logo Instagram"></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
